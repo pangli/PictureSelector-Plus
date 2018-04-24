@@ -355,6 +355,6 @@ PictureSelector.create(MainActivity.this).externalPictureVideo(video_path);
 ![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/audio.jpg)
 ![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/9.jpg)
 ![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/10.jpg)
-![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/13.jpg)
+![image](https://github.com/pangli/PictureSelector-Plus/blob/fbd8ac1cdc14d0e3c1f1319bebf29a80d964fe56/image/13.jpg)
 
 
