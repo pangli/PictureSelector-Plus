@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_top">8dp</dimen>
+    <!--editor-->
+    <dimen name="photo_editor_text_padding">20dp</dimen>
+    <dimen name="radio_color">28dp</dimen>
+    <dimen name="radio_color_margin">6dp</dimen>
+    <dimen name="radio_mode_space">32dp</dimen>
+    <dimen name="radio_margin">20dp</dimen>
+</resources>
