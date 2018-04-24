@@ -1,32 +1,19 @@
-# PictureSelector 2.0 
-   一款针对android平台下的图片选择器，支持从相册或拍照选择图片或视频、音频，支持动态权限获取、裁剪(单图or多图裁剪)、压缩、主题自定义配置等功能、适配android 6.0+系统的开源图片选择框架。<br>  
+# PictureSelector-Plus
+# 注：本代码修改自[PictureSelector 2.0](https://github.com/LuckSiege/PictureSelector)
+   一款针对android平台下的图片选择器，支持从相册或拍照选择图片或视频、音频，支持动态权限获取、裁剪(单图or多图裁剪)、压缩、图片编辑、主题自定义配置等功能、适配android 6.0+系统的开源图片选择框架。<br>  
   
-  <br>项目会一直维护(有bug修复完成，一般周末会更新)，有bug请描述清楚，并请Issues会第一时间修复，个人QQ 893855882@qq.com  希望用得着的朋友点个star。 <br>
- Android开发交流 群一 619458861）(已满) <br> 
- Android开发交流 群二 679824206 <br> 
-   
-  [我的博客地址](http://blog.csdn.net/luck_mw) 
-  
-[![](https://jitpack.io/v/LuckSiege/PictureSelector.svg)](https://jitpack.io/#LuckSiege/PictureSelector)
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/LuckSiege)
-[![CSDN](https://img.shields.io/twitter/url/http/blog.csdn.net/luck_mw.svg?style=social)](http://blog.csdn.net/luck_mw)
-[![I](https://img.shields.io/github/issues/LuckSiege/PictureSelector.svg)](https://github.com/LuckSiege/PictureSelector/issues)
-[![Star](https://img.shields.io/github/stars/LuckSiege/PictureSelector.svg)](https://github.com/LuckSiege/PictureSelector)
-
 ## 目录
 -[功能特点](#功能特点)<br>
--[集成方式](#集成方式)<br>
 -[常见错误](#常见错误)<br>
 -[功能配置](#功能配置)<br>
 -[缓存清除](#缓存清除)<br>
 -[主题配置](#主题配置)<br>
 -[常用功能](#常用功能)<br>
 -[结果回调](#结果回调)<br>
--[更新日志](#更新日志)<br>
 -[混淆配置](#混淆配置)<br>
 -[兼容性测试](#兼容性测试)<br>
 -[演示效果](#演示效果)<br>
--[打赏](#打赏)<br>
+
 
 # 功能特点
 
@@ -66,50 +53,6 @@
     
 ```
 
-
-## 集成方式
-
-方式一 compile引入
-
-```
-dependencies {
-    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
-}
-
-```
-
-项目根目录build.gradle加入
-
-```
-allprojects {
-   repositories {
-      jcenter()
-      maven { url 'https://jitpack.io' }
-   }
-}
-```
-
-方式二 maven引入
-
-step 1.
-```
-<repositories>
-       <repository>
-       <id>jitpack.io</id>
-	<url>https://jitpack.io</url>
-       </repository>
- </repositories>
-```
-step 2.
-```
-
-<dependency>
-      <groupId>com.github.LuckSiege.PictureSelector</groupId>
-      <artifactId>picture_library</artifactId>
-      <version>v2.2.3</version> 
-</dependency>
-
-```
 
 ## 常见错误
 ```
@@ -334,81 +277,8 @@ PictureSelector.create(MainActivity.this).externalPictureVideo(video_path);
     
 ```
 
-
-## 更新日志
-
-# 当前版本：
-* v2.2.3
-* 1.修复沉浸式在部分机型标题栏遮挡情况
-
-# 历史版本：
-* v2.2.2
-* 1.优化外部预览界面样式不同步问题
-* 2.优化沉浸式方案，适配更多机型
-* 3.新增isDragFrame(false) API  是否可拖动裁剪框(固定)
-* 4.修复录音会生成重复文件问题
-
-* v2.2.0
-* 1.修复单独拍照+裁剪图片不返回问题
-
-* v2.1.9
-* 1.修改单选策略，也支持预览模式
-* 2.修复8.0部分手机闪退问题
-* 3.修复图片到了最大可选数量，在拍照返回图片不出现问题
-* 4.修改单选模式在拍照返回图片不存在问题
-* 5.升级glide为最新版本4.5.0
-* 6.修复parUri() sdk判断错误问题
-* 7.修复预览图片变形问题
-* 8.修复Toast内存泄漏问题
-* 9.修复若干已知bug
-
-* v2.1.7
-* 1.修复.bmp格式图片，同步压缩会出现闪退问题
-* 2.修复部分机型在使用裁剪或压缩路径时报FileNotfoundException异常问题
-
-* v2.1.6
-* 1.增加拍照自定义相片后缀名(.imageFormat(PictureMimeType.PNG)// 拍照保存图片格式后缀,默认jpeg)
-* 2.修复设置数字选择风格，不显示数量问题
-* 3.修复预览界面文字设置无效问题
-* 4.修复已知bug
-
-* v2.1.5
-* 简化压缩代码，只保留luban最新版本压缩
-* 增加压缩自定义保存路径
-* 增加过滤多少kb范围内的图片不压缩处理
-* 修复压缩透明图片出现黑色背景问题
-* 修复开启点击音效第一次不响bug
-
-* v2.1.3
-* 支持长图预览功能
-* 修复部分图片或视频查询不出来bug
-* 去除使用者主动添加适配android 6.0以上系统拍照适配配置
-* 升级PhotoView版本为最新版本
-* 解决部分图片预览时没有填充满屏幕问题
-* 优化相册启动时间，去除一些耗时操作
-* 优化代码结构
-* 修复已知问题
-
-* v2.1.1
-* 升级glide 4.0为正式版
-* 修复7.1.1系统PopupWindow弹出位置错误bug
-
-* v2.1.0
-* 修复裁剪速度慢的问题
-
-* v2.0.9
-* 修复直接播放视频闪退bug
-* 升级glide为4.0.0 rc1
-* 新增图片列表点击缩放效果api
-
-* v2.0.7
-* 修复已知bug
-
-* v2.0.6
-* 新增自定拍照保存路径
-* 修复录音不显示时长问题
-
 # 项目使用第三方库：
+* PictureSelector 2.0
 * glide:4.5.0	
 * rxjava:2.0.5
 * rxandroid:2.0.1
@@ -463,30 +333,28 @@ PictureSelector.create(MainActivity.this).externalPictureVideo(video_path);
 -keepresourcexmlelements manifest/application/meta-data@value=GlideModule
 
 ```
-## 打赏
-# ~如果您觉得好，对你有帮助，可以给我一点打赏当做鼓励，蚊子再小也是肉呀(*^__^*) 嘻嘻…… 
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/apply.png)
 
 ## 兼容性测试
 ******腾讯优测-深度测试-通过率达到100%******
 
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/test.png)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/test.png)
 
 ## 演示效果
 
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/1.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/2.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/3.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/4.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/white.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/blue.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/11.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/5.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/6.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/7.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/8.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/audio.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/9.jpg)
-![image](https://github.com/LuckSiege/PictureSelector/blob/master/image/10.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/1.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/2.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/3.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/4.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/white.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/blue.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/11.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/5.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/6.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/7.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/8.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/audio.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/9.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/10.jpg)
+![image](https://github.com/LuckSiege/PictureSelector-Plus/blob/master/image/13.jpg)
 
 
